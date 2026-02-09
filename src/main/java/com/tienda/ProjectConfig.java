@@ -17,7 +17,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
 
-    // ============ SEMANA 1 (rutas a templates) ============
+    
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
@@ -28,8 +28,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
 
-        // ============ SEMANA 2 (rutas del menú nuevo) ============
-        // Si no tenés estos templates aún, crealos vacíos para quitar el 404
+        
         registry.addViewController("/categoria/listado").setViewName("categoria/listado");
         registry.addViewController("/producto/listado").setViewName("producto/listado");
 
@@ -54,7 +53,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    // ============ SEMANA 2 (Internacionalización) ============
+    
 
     @Bean
     public LocaleResolver localeResolver() {
