@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.1</version>
+        <version>3.5.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tienda</groupId>
@@ -66,8 +66,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>popperjs__core</artifactId>
+            <groupId>org.webjars</groupId>
+            <artifactId>popper.js</artifactId>
             <version>2.11.7</version>
         </dependency>
 
