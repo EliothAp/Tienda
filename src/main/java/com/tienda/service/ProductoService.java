@@ -34,6 +34,8 @@ public class ProductoService {
         return productoRepository.findById(idProducto);
     }
 
+
+    
     @Transactional
     public void save(Producto producto, MultipartFile imagenFile) {
         productoRepository.save(producto);
@@ -66,5 +68,19 @@ public class ProductoService {
             // Lanza una nueva excepción para encapsular el problema de integridad de datos
             throw new IllegalStateException("No se puede eliminar la producto. Tiene datos asociados.", e);
         }
+    }    
+    @Transactional(readOnly = true)
+    public List<Producto> consultaDerivada(double precioInf, double precioSup){
+        return productoRepository.findByPrecioBetweenOrderByPrecioAsc(precioInf, precioSup);
+    }
+    
+    @Transactional(readOnly = true)
+    public List<Producto> consultaJPQL(double precioInf, double precioSup){
+        return productoRepository.consultaJPQL(precioInf, precioSup);
+    }
+    
+    @Transactional(readOnly = true)
+    public List<Producto> consultaSQL(double precioInf, double precioSup){
+        return productoRepository.consultaSQL(precioInf, precioSup);
     }
 }
