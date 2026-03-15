@@ -150,7 +150,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         UserDetails user = User.builder()
                 .username("pedro")
                 .password(passwordEncoder.encode("789"))
-                .roles("USUARIO") // Consistent con tu configuración
+                .roles("USUARIO")
                 .build();
 
         return new InMemoryUserDetailsManager(admin, sales, user);

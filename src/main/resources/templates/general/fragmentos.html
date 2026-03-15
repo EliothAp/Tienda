@@ -34,6 +34,7 @@
                                     <li><a class="dropdown-item" th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
                                     <li><a class="dropdown-item" th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
                                 </ul>
+
                             </li>
                             <li class="nav-item dropdown" >
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
@@ -56,6 +57,13 @@
                                 </ul>
                             </li>
                         </ul>
+                        
+                        <li class="nav-item px-2"
+                            sec:authorize="!hasRole('ROLE_ADMIN') and !hasRole('ROLE_VENDEDOR')">
+                            <a class="nav-link" th:href="@{/consultas/listado}">
+                                [[#{plantilla.consultas}]]
+                            </a>
+                        </li>
 
 
                         <ul class="navbar-nav">
