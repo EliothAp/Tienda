@@ -82,4 +82,8 @@ public class ProductoService {
         return productoRepository.consultaSQL(precioInf, precioSup);
     }
 
+    @Transactional(readOnly = true)
+    public List<Producto> consultaPractica(BigDecimal precioInf, BigDecimal precioSup) {
+        return productoRepository.consultaPractica(precioInf, precioSup);
+    }
 }

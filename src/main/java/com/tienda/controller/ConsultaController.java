@@ -58,4 +58,17 @@ public class ConsultaController {
         model.addAttribute("precioSup", precioSup);
         return "/consultas/listado";
     }
+    
+    @PostMapping("/consultaPractica")
+    public String consultaPractica(@RequestParam() BigDecimal precioInf,
+            @RequestParam() BigDecimal precioSup,
+            Model model) {
+        var productos = productoService.consultaPractica(precioInf, precioSup);
+        model.addAttribute("productos", productos);
+        model.addAttribute("precioInf", precioInf);
+        model.addAttribute("precioSup", precioSup);
+        return "/consultas/listado";
+    }
+    
+
 }
